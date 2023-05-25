@@ -11,6 +11,7 @@ class CatFact extends HookConsumerWidget {
     final catFact = ref.watch(catFutureProvider);
     return catFact.when(
         loading: loadingWidget,
+        skipLoadingOnRefresh: false,
         data: (data) => Center(
                 child: Text(
               data.fact,
