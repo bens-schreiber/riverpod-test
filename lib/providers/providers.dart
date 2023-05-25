@@ -32,6 +32,10 @@ class PageControllerNotifier extends StateNotifier<int> {
   }
 }
 
+// Basic provider for just counting. No predefined State template like the page controller in this
+// example
+final counterProvider = StateProvider<int>((ref) => 0);
+
 // Responsible for the rate intStreamProvider produces ints
 final clockRateProvider = StateNotifierProvider<ClockRate, double>((ref) {
   return ClockRate();

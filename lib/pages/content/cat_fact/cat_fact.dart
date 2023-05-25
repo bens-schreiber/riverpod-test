@@ -14,6 +14,6 @@ class CatFact extends HookConsumerWidget {
               textAlign: TextAlign.center,
             ),
         error: ((error, stackTrace) => const Placeholder()),
-        loading: () => const CircularProgressIndicator());
+        loading: () => const Center(child: CircularProgressIndicator()));
   }
 }

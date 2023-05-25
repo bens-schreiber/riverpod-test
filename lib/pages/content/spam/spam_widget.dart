@@ -12,7 +12,7 @@ class SpamWidget extends HookConsumerWidget {
     return seconds.when(
       skipLoadingOnRefresh: true,
       skipLoadingOnReload: true,
-      loading: () => const CircularProgressIndicator(),
+      loading: () => const Center(child: CircularProgressIndicator()),
       error: ((error, stackTrace) => const Placeholder()),
       data: (data) => SizedBox(
         height: 300,
