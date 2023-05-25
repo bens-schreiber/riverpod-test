@@ -10,6 +10,7 @@ class HomePage extends ConsumerWidget {
     final count = ref.watch(counterProvider);
     return Scaffold(
         floatingActionButton: FloatingActionButton(
+            child: const Icon(Icons.plus_one),
             onPressed: () => ref.read(counterProvider.notifier).state++),
         body: Center(
             child: Text(
