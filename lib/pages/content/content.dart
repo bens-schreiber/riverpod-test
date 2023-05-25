@@ -4,6 +4,7 @@ import 'package:riverpodtest/pages/content/cat_fact/cat_fact_page.dart';
 import 'package:riverpodtest/pages/content/home/home_page.dart';
 import 'package:riverpodtest/pages/content/spam/spam_page.dart';
 import 'package:riverpodtest/providers/providers.dart';
+import 'package:riverpodtest/widgets/dialog.dart';
 
 typedef B = BottomNavigationBarItem;
 const _pages = [HomePage(), CatFactPage(), SpamPage()];
@@ -15,7 +16,13 @@ class Content extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = ref.watch(pageControllerProvider);
     return Scaffold(
-      body: _pages[pageController],
+      // Enables dialog popups callablle anywhere
+      body: DialogZone(
+        dialog: const SampleDialogWidget(),
+
+        // Page the pageController has stored
+        child: _pages[pageController],
+      ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: pageController,
           onTap: ((value) {

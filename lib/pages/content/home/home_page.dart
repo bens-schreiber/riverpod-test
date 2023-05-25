@@ -9,9 +9,16 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(counterProvider);
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.plus_one),
-            onPressed: () => ref.read(counterProvider.notifier).state++),
+        floatingActionButton:
+            Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          FloatingActionButton(
+              child: const Icon(Icons.plus_one),
+              onPressed: () => ref.read(counterProvider.notifier).state++),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+              child: const Icon(Icons.explicit_sharp),
+              onPressed: () => ref.read(dialogZoneProvider.notifier).show())
+        ]),
         body: Center(
             child: Text(
           "Basic Counter: $count",

@@ -36,6 +36,21 @@ class PageControllerNotifier extends StateNotifier<int> {
 // example
 final counterProvider = StateProvider<int>((ref) => 0);
 
+// Tells the dialogZone when it should be displaying a dialog
+// Controls the current page that is being shown in content
+final dialogZoneProvider =
+    StateNotifierProvider<DialogZoneNotifier, bool>((ref) {
+  return DialogZoneNotifier();
+});
+
+class DialogZoneNotifier extends StateNotifier<bool> {
+  DialogZoneNotifier() : super(true);
+
+  void show() => state = true;
+
+  void hide() => state = false;
+}
+
 // Responsible for the rate intStreamProvider produces ints
 final clockRateProvider = StateNotifierProvider<ClockRate, double>((ref) {
   return ClockRate();
