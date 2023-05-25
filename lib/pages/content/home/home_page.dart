@@ -5,11 +5,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text(
-        "Nothing much to do here...",
-        textAlign: TextAlign.center,
-      ),
-    );
+    return const Center(
+        child: Text(
+      "Nothing much to do here...",
+      textAlign: TextAlign.center,
+    ));
   }
 }

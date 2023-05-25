@@ -10,6 +10,28 @@ final splashPageProvider = FutureProvider((ref) async {
   return "/home";
 });
 
+// Controls the current page that is being shown in content
+final pageControllerProvider =
+    StateNotifierProvider<PageControllerNotifier, int>((ref) {
+  return PageControllerNotifier();
+});
+
+class PageControllerNotifier extends StateNotifier<int> {
+  PageControllerNotifier() : super(0);
+
+  void nextPage() {
+    state++;
+  }
+
+  void previousPage() {
+    state--;
+  }
+
+  void goToPage(int pageIndex) {
+    state = pageIndex;
+  }
+}
+
 // Responsible for the rate intStreamProvider produces ints
 final clockRateProvider = StateNotifierProvider<ClockRate, double>((ref) {
   return ClockRate();

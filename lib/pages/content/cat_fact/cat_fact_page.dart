@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverpodtest/pages/home/pages/cat_fact/cat_fact.dart';
+import 'package:riverpodtest/pages/content/cat_fact/cat_fact.dart';
 
 class CatFactPage extends StatelessWidget {
   const CatFactPage({super.key});

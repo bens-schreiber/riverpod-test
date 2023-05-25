@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riverpodtest/widgets/clock/clock.dart';
-import 'package:riverpodtest/pages/home/pages/spam/spam_widget.dart';
+import 'package:riverpodtest/pages/content/spam/spam_widget.dart';
 
 class SpamPage extends StatelessWidget {
   const SpamPage({super.key});
