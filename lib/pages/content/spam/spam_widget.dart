@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpodtest/providers/providers.dart';
+import 'package:riverpodtest/util/util.dart';
 
 class SpamWidget extends HookConsumerWidget {
   const SpamWidget({super.key});
@@ -12,7 +13,7 @@ class SpamWidget extends HookConsumerWidget {
     return seconds.when(
       skipLoadingOnRefresh: true,
       skipLoadingOnReload: true,
-      loading: () => const Center(child: CircularProgressIndicator()),
+      loading: loadingWidget,
       error: ((error, stackTrace) => const Placeholder()),
       data: (data) => SizedBox(
         height: 300,

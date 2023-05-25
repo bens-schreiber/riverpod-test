@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpodtest/providers/providers.dart';
+import 'package:riverpodtest/util/util.dart';
 
 class CatFact extends HookConsumerWidget {
   const CatFact({super.key});
@@ -9,11 +10,12 @@ class CatFact extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final catFact = ref.watch(catFutureProvider);
     return catFact.when(
-        data: (data) => Text(
+        loading: loadingWidget,
+        data: (data) => Center(
+                child: Text(
               data.fact,
               textAlign: TextAlign.center,
-            ),
-        error: ((error, stackTrace) => const Placeholder()),
-        loading: () => const Center(child: CircularProgressIndicator()));
+            )),
+        error: ((error, stackTrace) => const Placeholder()));
   }
 }

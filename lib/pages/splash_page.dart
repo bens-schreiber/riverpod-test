@@ -28,7 +28,7 @@ class SplashPage extends ConsumerWidget {
 }
 
 class _SplashPageDisplay extends StatelessWidget {
-  const _SplashPageDisplay({super.key});
+  const _SplashPageDisplay();
 
   @override
   Widget build(BuildContext context) => Scaffold(
